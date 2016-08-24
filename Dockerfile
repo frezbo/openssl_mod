@@ -24,7 +24,7 @@ RUN wget "https://www.openssl.org/source/openssl-${OPENSSL_VERSION}.tar.gz" -P /
 && mv /opt/no-des.patch /opt/openssl-${OPENSSL_VERSION} \
 && patch -p1 crypto/cms/cms_kari.c < no-des.patch
 RUN cd /opt/openssl-${OPENSSL_VERSION} \
-&& ./config --prefix=/usr no-ssl3 no-rc4 no-camellia no-seed no-comp no-srp no-psk no-idea no-des no-descbcm no-dh no-ecdh \
+&& ./config --prefix=/usr no-ssl3 no-rc4 no-camellia no-seed no-comp no-srp no-psk no-idea no-des no-descbcm no-dh \
 && make depend \
 && make \
 #&& make test \ #make test fails when des is disabled
