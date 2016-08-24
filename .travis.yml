@@ -9,4 +9,4 @@ before_install:
   - docker build -t frezbo/openssl_mod .
 
 script:
-  - bundle exec rake test
+  - docker run --rm -i frezbo/openssl_mod openssl -v ciphers
