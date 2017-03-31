@@ -1,5 +1,6 @@
 FROM centos
 MAINTAINER Frezbo <docker@frezbo.com>
+ENV DATE 2017-03-31
 ENV OPENSSL_VERSION="1.0.2h"
 #from https://github.com/openssl/openssl/pull/872/files
 COPY no-des.patch /opt
